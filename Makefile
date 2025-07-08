@@ -1,7 +1,12 @@
 INCDIR = $(PREFIX)/include
 LIBDIR = $(PREFIX)/lib
 
+ifeq ($(DEBUG),1)
+CFLAGS = -O0 -Wall -g -DDEBUG
+else
 CFLAGS = -O2 -Wall
+endif
+
 LDFLAGS =
 LDLIBS = -lz -lzstd
 
